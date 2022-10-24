@@ -1,6 +1,6 @@
 /* Richard Davies, Data Science for Economists */
 
-/* This is my second CSS file */
+/* This is my first proper css file */
 
 
 /* Import a font */
@@ -8,17 +8,15 @@
 
 
 /* Set the background color for my page: */
-
-/* Book on colour = Joseph Albers - Interaction of Colour */
-
 body{
-    background-color: rgb(200,200,200);
- }
+    background-color: rgb(233, 233, 233);
+ 
+}
 
 
 /* Choose the appearance of the tags, h1, h3 and p: */
 h1, h3, p{
-    color:rgb(0, 0, 0);
+    color:rgb(17, 17, 17);
     font-family: 'Roboto', sans-serif;
     text-align: center;
 }
@@ -26,25 +24,19 @@ h1, h3, p{
 .myWeek1{
     margin: auto;
     max-width: 600px;
-    background-color: rgb(250, 220, 220);
-
-      
-    border-width: 3px;
-    border-style: solid;
-    border-radius: 15px;
-    border-color: rgb(250,100,100);
+    background-color: bisque;
 }
 
 
 /* Set the apperance of the class, chart */
 .chart{
-    background-color: white;
-    width:450px;
-    border-width: 2px;
+    background-color: orange;
+    width:330px;
+    border-width: 10px;
     border-style: solid;
-    border-radius: 10px;
-    border-color: grey;
+    border-radius: 5px;
+    border-color: red;
+
     
 }
     
-
