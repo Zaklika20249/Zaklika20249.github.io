@@ -23,11 +23,10 @@
 
 
 <body>
-    
+
+    <br><br>
     <div class="myWeek1">
         
-        <h1>Data Science</h1>
-
         <h1>Week 1</h1>
 
         <h3>Bank Rate</h3>
@@ -37,32 +36,62 @@
         <h3>Inflation</h3>
         <p>My second chart looks at inflation in the UK</p>
         <div class="chart" id="Chart2"> </div>
+        <br><br>
     </div> 
 
+    <br>
     <div class="myWeek1">
       <h1> Week 2</h1>
-      <p>Outstanding credit</p>
+      <h3>IMF Lending</h3>
       <div class="chart" id="Chart3"> </div>
+      <h3>IMF Lending relative to GDP</h3>
+      <div class="chart" id="Chart4"> </div>
+      <p>The first chart would suggest that the most risky year is 2021, however, after IMF lending was shown in relation to world's GDP it is clear that the most risky year was 1984.</p>
+        <br>
     </div>
 
+    <br>
     <div class="myWeek1">
         <h1> Week 3</h1>
-
+        <div class="chart" id="Chart5"> </div>
+        <br><br>
+        <div class="chart" id="Chart6"> </div>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis cumque praesentium rem quos dolorum eveniet, illum voluptatem autem eum, quidem animi perferendis, iure quisquam quibusdam?</p>
+        <br>
     </div>
+    <br>
+
+    <br>
+    <div class="myWeek1">
+        <h1> Week 4</h1>
+        <p>https://colab.research.google.com/drive/1HV_jBT07yT3NiArACvAgSf_F5JASSisO?usp=sharing</p>
+        <div class="chart" id="Chart7"> </div>
+        <p>I've chosen Wikipedia as a site to scrap data from as it provided the data that didn't require much cleaning and looks good on a bar chart. The choice of the military spending as a variable presented in the chart can be explained by current world situation.</p>
+
+
+        </div>
 
 </body>
 
 
 <script>
     //Define charts:
-    var myChart1 = "chartBar9.json";
-    var myChart2 = "chartLine8.json";
-    var myChart3 = "1.json";
+    var myChart1 = "Chart1.json";
+    var myChart2 = "Chart2.json";
+    var myChart3 = "Chart3.json";
+    var myChart4 = "Chart4.json";
+    var myChart5 = "Chart5.json";
+    var myChart6 = "Chart6.json";
+    var myChart7 = "Chart7.json";
 
     // Embed charts:
     vegaEmbed('#Chart1', myChart1);
     vegaEmbed('#Chart2', myChart2);
     vegaEmbed('#Chart3', myChart3);
+    vegaEmbed('#Chart4', myChart4);
+    vegaEmbed('#Chart5', myChart5);
+    vegaEmbed('#Chart6', myChart6);
+    vegaEmbed('#Chart7', myChart7);
 </script>
 
 </html>
