@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "Poland",
+      "subtitleFontStyle": "italic",
+      "subtitleFontSize": 14,
+      "color": "black"
+    },
+    
+    "width": 300,
+    "height": 300,
+
+    "data": {
+      "url": "https://raw.githubusercontent.com/deldersveld/topojson/master/countries/poland/poland-provinces.json",
+      "format": {"type": "topojson", "feature": "POL_adm1"}
+    },
+
+    "projection": {"type": "mercator"},
+    "mark": "geoshape",
+      "encoding": {
+      "tooltip": {
+        "field": "properties.NAME_1"
+      }
+    }
+  }
+
+
+
+
+
+

@@ -1,0 +1,51 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "Unemployment in Poland October 2022",
+      "subtitleFontStyle": "italic",
+      "subtitleFontSize": 14,
+      "color": "black"
+    },
+    
+    "width": 300,
+    "height": 300,
+
+    "data": {
+      "url": "https://raw.githubusercontent.com/deldersveld/topojson/master/countries/poland/poland-provinces.json",
+      "format": {"type": "topojson", "feature": "POL_adm1"}
+    },
+
+"transform": [
+{
+  "lookup": "properties.NAME_1",
+  "from": {
+    "data": {
+      "url": "https://raw.githubusercontent.com/Zaklika20249/Zaklika20249.github.io/main/pol2.csv"
+    },
+    "key": "Province",
+    "fields": ["Unemployment"]
+  }
+}
+],
+
+    "projection": {"type": "mercator"},
+    "mark": "geoshape",
+      "encoding": {
+          "color": {
+  "field": "Unemployment",
+  "title": "Unemployment rate(%)",
+  "type": "quantitative"
+},
+
+      "tooltip": [{
+        "field": "properties.NAME_1", "title": "Province"
+        },{
+    "field": "Unemployment",
+    "type": "quantitative",
+    "title": "Unemployment"
+ 
+  }]
+  }
+  
+
+}
