@@ -1,14 +1,14 @@
-﻿NAME,Value
-Ukraine,0.29
-Slovakia,6.77
-Romania,6.35
-Russia,2.03
-Republic of Moldova,-1.46
-Poland,9.99
-Lithuania,6.69
-Latvia,4.76
-Hungary,7.4
-Estonia,6.83
-Czech Republic,7.94
-Bulgaria,3.21
-Belarus,3.38
+﻿NAME,Value,Distance from Paris
+Ukraine,0.29,2025
+Slovakia,6.77,1088
+Romania,6.35,1870
+Russia,2.03,2486
+Republic of Moldova,-1.46,1973
+Poland,9.99,1367
+Lithuania,6.69,1696
+Latvia,4.76,1703
+Hungary,7.4,1244
+Estonia,6.83,1859
+Czech Republic,7.94,882
+Bulgaria,3.21,1758
+Belarus,3.38,1825
