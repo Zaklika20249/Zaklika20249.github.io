@@ -1,0 +1,89 @@
+
+{"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+"data": {
+  "url": "https://raw.githubusercontent.com/Zaklika20249/Zaklika20249.github.io/main/EXP1.csv"
+},
+"height": 300,
+"width": 300,
+"title": {
+  "text": "Chart 5: Govt expenses and economic growth",
+"subtitle":"Sources: UN and IMF",
+"subtitleFontStyle":"italic",
+ "subtitleFontSize":10,
+  "color": "black"
+},
+"layer": [
+  {
+    "mark": {
+      "type": "point",
+      "filled": true
+    },
+    "encoding": {
+      "x": {
+        "field": "Change in expenses",
+        "type": "quantitative"
+      },
+      "y": {
+        "field": "AVG growth rate",
+        "type": "quantitative"
+      },
+      "color": {
+    "field": "Country", 
+    "type": "nominal",
+    "title": null,
+    
+    "legend": {"orient":"bottom-left"}
+    }
+    }
+  },
+  {
+    "mark": {
+      "type": "line",
+      "color": "firebrick",
+      "strokeDash": [6,3]
+        },
+    "transform": [
+      {
+        "regression": "AVG growth rate",
+        "on": "Change in expenses",
+        "extent":[-25,10]
+      }
+    ],
+    "encoding": {
+      "x": {
+        "field": "Change in expenses",
+        "type": "quantitative",
+        "title": "Change in government expenses(%GDP) 1990-2005"
+
+      },
+      "y": {
+        "field": "AVG growth rate",
+        "type": "quantitative",
+        "title": "Average Economic Growth(%) 1990-2005"
+      }
+
+    }
+  },
+   {
+      "transform": [
+        {
+          "regression": "AVG growth rate",
+          "on": "Change in expenses",
+          "params": true
+        },
+        {"calculate": "'R²: '+format(datum.rSquared, '.3f')", "as": "R2"}
+      ],
+      "mark": {
+        "type": "text",
+        "color": "firebrick",
+        "x": "width",
+        "align": "right",
+        "y": -10
+      },
+      "encoding": {
+        "text": {"type": "nominal", "field": "R2"}
+      }
+    }
+]
+}

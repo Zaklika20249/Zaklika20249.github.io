@@ -1,0 +1,89 @@
+
+{"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+"data": {
+  "url": "https://raw.githubusercontent.com/Zaklika20249/Zaklika20249.github.io/main/INR.csv"
+},
+"height": 300,
+"width": 300,
+      "title": {
+        "text": "Chart 3: Interest rates and economic growth",
+      "subtitle":"Sources: UN and IMF",
+      "subtitleFontStyle":"italic",
+       "subtitleFontSize":10,
+        "color": "black"
+      },
+
+"layer": [
+  {
+    "mark": {
+      "type": "point",
+      "filled": true
+    },
+    "encoding": {
+      "x": {
+        "field": "AVG interest rate",
+        "type": "quantitative",
+        "title":"Average Real Interest Rate(%) 1992-2005"
+      },
+      "y": {
+        "field": "AVG growth rate",
+        "type": "quantitative",
+        "title":"Average Economic Growth(%) 1992-2005"
+      },
+      "color": {
+    "field": "Country", 
+    "type": "nominal",
+        "title":"",
+    
+    "legend": {"orient":"top-left"}
+    }
+    }
+  },
+  {
+    "mark": {
+      "type": "line",
+      "color": "blueviolet",
+      "strokeDash": [6,3]
+        },
+    "transform": [
+      {
+        "regression": "AVG growth rate",
+        "on": "AVG interest rate",
+        "extent":[-40,10]
+      }
+    ],
+    "encoding": {
+      "x": {
+        "field": "AVG interest rate",
+        "type": "quantitative"
+
+      },
+      "y": {
+        "field": "AVG growth rate",
+        "type": "quantitative"
+      }
+
+    }
+  }, {
+      "transform": [
+        {
+          "regression": "AVG growth rate",
+          "on": "AVG interest rate",
+          "params": true
+        },
+        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+      ],
+      "mark": {
+        "type": "text",
+        "color": "blueviolet",
+        "x": "width",
+        "align": "right",
+        "y": -10
+      },
+      "encoding": {
+        "text": {"type": "nominal", "field": "R2"}
+      }
+    }
+]
+}

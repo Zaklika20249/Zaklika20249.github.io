@@ -1,0 +1,57 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "Average economic growth 1990-2005",
+      "subtitleFontStyle": "italic",
+      "subtitleFontSize": 14,
+      "color": "black"
+    },
+    
+    "width": 300,
+    "height": 300,
+        "params": [
+        {
+          "name": "yearSelector", "value": 2003,
+          "bind": {
+            "input": "range",
+            "min": 1990,
+            "max": 2005,
+            "step": 1,
+            "name": "Year:"}}],
+  
+    "data": {
+      "url": "https://raw.githubusercontent.com/leakyMirror/map-of-europe/master/TopoJSON/europe.topojson",
+      "format": {"type": "topojson", "feature": "europe"}
+    },
+  
+  "transform": [
+  {
+  "lookup": "properties.NAME",
+  "from": {
+    "data": {
+      "url": "https://raw.githubusercontent.com/Zaklika20249/Zaklika20249.github.io/main/IN.csv",      "format": {"type": "csv"}
+    },
+    "key": "Country",
+    "fields": ["Inflation"]
+  }
+  }
+  ],
+  
+    "projection": {"type": "mercator"},
+    "mark": "geoshape",
+      "encoding": {
+          "color": {
+  "field": "Inflation",
+  "title": null,
+  "type": "quantitative"
+  },
+  
+      "tooltip": [{
+        "field": "properties.NAME", "title": "Country"
+        },{
+    "field": "Inflation",
+    "type": "quantitative",
+    "title": "Value(%)"
+  
+  }]
+  }}

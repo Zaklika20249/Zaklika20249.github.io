@@ -1,0 +1,91 @@
+{"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+"data": {
+  "url": "https://raw.githubusercontent.com/Zaklika20249/Zaklika20249.github.io/main/GDPmap.csv"
+},
+"height": 300,
+"width": 300,
+"title": {
+  "text": "Chart 6: Location and economic growth",
+"subtitle":"Sources: UN and IMF",
+"subtitleFontStyle":"italic",
+ "subtitleFontSize":10,
+  "color": "black"
+},
+"layer": [
+  {
+    "mark": {
+      "type": "point",
+      "filled": true
+    },
+    "encoding": {
+      "x": {
+        "field": "Distance from Paris",
+        "type": "quantitative",
+        "scale": {"domain": [500,2500]},
+         "title": "Distance from Paris(km)"
+
+      },
+      "y": {
+        "field": "Value",
+        "type": "quantitative",
+        "title": "Average Economic Growth(%) 1990-2005"
+      },
+      "color": {
+    "field": "NAME", 
+    "type": "nominal",
+    "title": null,
+    
+    
+    "legend": {"orient":"bottom-left"}
+    }
+    }
+  },
+  {
+    "mark": {
+      "type": "line",
+      "color": "grey",
+      "strokeDash": [6,3]
+        },
+    "transform": [
+      {
+        "regression": "Value",
+        "on": "Distance from Paris",
+        "extent":[500,2500]
+      }
+    ],
+    "encoding": {
+      "x": {
+        "field": "Distance from Paris",
+        "type": "quantitative"
+
+      },
+      "y": {
+        "field": "Value",
+        "type": "quantitative"
+      }
+
+    }
+  },
+   {
+      "transform": [
+        {
+          "regression": "Value",
+          "on": "Distance from Paris",
+          "params": true
+        },
+        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+      ],
+      "mark": {
+        "type": "text",
+        "color": "grey",
+        "x": "width",
+        "align": "right",
+        "y": -10
+      },
+      "encoding": {
+        "text": {"type": "nominal", "field": "R2"}
+      }
+    }
+]
+}

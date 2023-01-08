@@ -1,0 +1,49 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Chart 2: Average economic growth 1990-2005",
+    "subtitle":"Source: UN",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 14,
+    "color": "black"
+  },
+  
+  "width": 300,
+  "height": 300,
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/leakyMirror/map-of-europe/master/TopoJSON/europe.topojson",
+    "format": {"type": "topojson", "feature": "europe"}
+  },
+
+"transform": [
+{
+"lookup": "properties.NAME",
+"from": {
+  "data": {
+    "url": "https://raw.githubusercontent.com/Zaklika20249/Zaklika20249.github.io/main/GDPmap.csv"
+  },
+  "key": "NAME",
+  "fields": ["Value"]
+}
+}
+],
+
+  "projection": {"type": "mercator"},
+  "mark": "geoshape",
+    "encoding": {
+        "color": {
+"field": "Value",
+"title": null,
+"type": "quantitative"
+},
+
+    "tooltip": [{
+      "field": "properties.NAME", "title": "Country"
+      },{
+  "field": "Value",
+  "type": "quantitative",
+  "title": "Value(%)"
+
+}]
+}}

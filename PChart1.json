@@ -1,0 +1,61 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "data": {"url": "https://raw.githubusercontent.com/Zaklika20249/Zaklika20249.github.io/main/GDPpc.csv"},
+      "title": {
+        "text": "Chart 1: GDP per capita 1970-2005",
+        "subtitle":"Source: UN",
+        "subtitleFontStyle":"italic",
+        "subtitleFontSize":10,
+        "color": "black"
+      },
+  "width": 300,
+  "height": 300,
+  "transform": [{"filter": "datum.Country!=='IBM'"}],
+  "encoding": {
+    "x": {"field": "Year", "type": "temporal", "title": ""},
+    "y": {"field": "Value", "type": "quantitative", "title": "GDP per capita(US$)"},
+    "color": {
+      "condition": {
+        "param": "hover",
+        "field":"Country",
+        "type":"nominal",
+        "legend": null
+      },
+      "value": "grey"
+    },
+    "opacity": {
+      "condition": {
+        "param": "hover",
+        "value": 1
+      },
+      "value": 0.2
+    }
+  },
+  "layer": [{
+    "params": [{
+      "name": "hover",
+      "value": [{"Country": "Czechia"}],
+      "select": {
+        "type": "point",
+        "fields": ["Country"],
+        "on": "mouseover"
+      }
+    }],
+    "mark": {"type": "line", "strokeWidth": 8, "stroke": "transparent"}
+  }, {
+    "mark": "line"
+  }, {
+    "encoding": {
+      "x": {"aggregate": "max", "field": "Year"},
+      "y": {"aggregate": {"argmax": "Year"}, "field": "Value"}
+    },
+    "layer": [{
+      "mark": {"type": "circle"}
+    }, {
+      "mark": {"type": "text", "align": "left", "dx": 4},
+      "encoding": {"text": {"field":"Country", "type": "nominal"}}
+    }]
+  }],
+  "config": {"view": {"stroke": null}}
+}
