@@ -1,5 +1,4 @@
 Country,Year,Inflation
-Belarus,1990,no data
 Belarus,1991,83.5
 Belarus,1992,970.3
 Belarus,1993,1190.3
@@ -31,12 +30,6 @@ Bulgaria,2002,5.8
 Bulgaria,2003,2.3
 Bulgaria,2004,6.1
 Bulgaria,2005,6
-Czech Republic,1990,no data
-Czech Republic,1991,no data
-Czech Republic,1992,no data
-Czech Republic,1993,no data
-Czech Republic,1994,no data
-Czech Republic,1995,no data
 Czech Republic,1996,8.8
 Czech Republic,1997,8.6
 Czech Republic,1998,10.7
@@ -47,10 +40,6 @@ Czech Republic,2002,1.9
 Czech Republic,2003,0.1
 Czech Republic,2004,2.8
 Czech Republic,2005,1.9
-Estonia,1990,no data
-Estonia,1991,no data
-Estonia,1992,no data
-Estonia,1993,no data
 Estonia,1994,47.7
 Estonia,1995,29
 Estonia,1996,19.7
@@ -63,9 +52,6 @@ Estonia,2002,3.6
 Estonia,2003,1.4
 Estonia,2004,3
 Estonia,2005,4.1
-Latvia,1990,no data
-Latvia,1991,no data
-Latvia,1992,no data
 Latvia,1993,109.2
 Latvia,1994,35.9
 Latvia,1995,25
@@ -79,12 +65,6 @@ Latvia,2002,2
 Latvia,2003,2.9
 Latvia,2004,6.2
 Latvia,2005,6.9
-Lithuania,1990,no data
-Lithuania,1991,no data
-Lithuania,1992,no data
-Lithuania,1993,no data
-Lithuania,1994,no data
-Lithuania,1995,no data
 Lithuania,1996,23.1
 Lithuania,1997,8.7
 Lithuania,1998,5.4
@@ -95,9 +75,6 @@ Lithuania,2002,0.3
 Lithuania,2003,-1.1
 Lithuania,2004,1.2
 Lithuania,2005,2.7
-Moldova,1990,no data
-Moldova,1991,no data
-Moldova,1992,no data
 Moldova,1993,788.5
 Moldova,1994,329.6
 Moldova,1995,30.2
@@ -159,8 +136,6 @@ Russian Federation,2002,15.8
 Russian Federation,2003,13.7
 Russian Federation,2004,10.9
 Russian Federation,2005,12.7
-Ukraine,1990,no data
-Ukraine,1991,no data
 Ukraine,1992,1210
 Ukraine,1993,4734.9
 Ukraine,1994,891.2
