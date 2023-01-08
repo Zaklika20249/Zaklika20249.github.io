@@ -17,21 +17,21 @@ body{
 
 
 /* Choose the appearance of the tags, h1, h3 and p: */
-h1, h3, p{
-    color:rgb(0, 0, 0);
+h1, h3{
+    color:rgb(255, 255, 255);
     font-family: 'Roboto', sans-serif;
     text-align: center;
 }
+
+p{
+    color:rgb(255, 255, 255);
+    font-family: 'Roboto', sans-serif;
+    justify-content: baseline;
+    margin: 30px;
+}
     
-.myWeek1{
-    margin: auto;
-    width: 600px;
-    max-width: 600px;
-    background-color: rgb(220, 220, 220);
-    border-width: 3px;
-    border-style: solid;
-    border-radius: 15px;
-    border-color: rgb(150,100,100);
+.project{
+
     align-content: center;
     text-align: center;
 }
@@ -41,16 +41,23 @@ h1, h3, p{
     background-color: white;
     max-width: 300px;
     max-width: 100%;
+
+    align-content: center;
+    text-align: center;
+}
+.chart2{
+    background-color: white;
+    max-width: 300px;
+    max-width: 100%;
     border-width: 2px;
-    border-style: solid;
     border-radius: 10px;
-    border-color: black;
+    border-style: solid;
+    border-color: rgb(243, 127, 127);
     align-content: center;
     text-align: center;
 }
 .minichart{
     background-color: white;
-
     border-width: 2px;
     border-style: solid;
     border-radius: 10px;

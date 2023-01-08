@@ -1,25 +1,124 @@
-Influence of monetary and fiscal policy on economic transition in eastern europe?
-Effects of economic policy during economic transition?
-Effects of economic policy during economic transition in eastern europe?
+
+<!DOCTYPE html>
+<html lang="en">
 
 
-Economic transition in eastern and central europe?
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Data Science Project Oliwier Zaklika</title>
 
-imf databse
+    <link rel="stylesheet" href="project.css">
 
-1. GDP/GDP per capita 1960-2015
-2. Growth rates???
-3. inflation 1960 - 2015
-4. Unemployment 1960 - 2015
-5. Avg growth rate 89-05 on avg interest rates 89-05
-6. Avg growth rate 89-05 on avg fiscal deficist as %gdp 89-05
-7. Average unemployment 89-05 on avg interest rates 89-05
-8. Average unemployment 89-05 on avg fiscal deficit as %gdp 89-05
-9. Avg growth rate 89-00 on capital city distance from Paris(possible proxy for culture/transformation type/ease of integration with european markets) 
-
-
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
 
 
+<body>
+<div class="project">
+<h1>Economic transition in eastern and central Europe</h1>
+
+<p align="justify">
+    The economic transition from a centrally planned economy to a market-determined one was a traumatic and defining moment for many societies in eastern and central Europe. Nevertheless, this decision, in many countries, has led to a period of economic success and an increase in living standards comparable only to a few in the history of humankind. The number of factors which defined the size of the success is probably impossible to state and for many of them, it is futile to analyse them quantitatively(e.g. amount of corruption in the privatisation process). As much as this topic is complex and complicated there are a few variables that allow for relatively easy quantitative analysis and tidy presentation on a chart. The point of this project is to check whether the style of fiscal and monetary policies had a visible impact on the economic performance of the transition economies. As it is impossible to assess a style of monetary fiscal policy with one numerical variable, proxy variables were used. Real interest rates were used as a proxy for monetary policy. Average government expenses(%GDP) and change in government expenses(%GDP) over the period were used as a proxy for fiscal policy. Also, the relationship between economic growth and the country's location was shown. It’s a proxy for many different factors e.g. ease in integration with the European market and Russian influence in the economy. I've chosen Paris as a point of reference quite arbitrarily, however, I wouldn't expect it to have any significant impact on the results.
+</p>
 
 
-nima cupiditate maxime, cumque blanditiis aperiam nam cum?
+    <div class="chart" id="Chart1"></div>
+    <div class="chart" id="Chart5"></div>
+
+
+
+<p align="justify">
+    The data used for this project came mainly from two sources - data on GDP per capita and thus growth rates came from the UN database
+    and data on real interest rates and government expenses(%GDP) were taken from the World Bank database. UN database allowed for a choice of
+    countries and timeframe before downloading thus it didn't require any cleaning(it also came in a long format). Data downloaded
+    from the World Bank database whose source was IMF was more problematic. It required data cleaning as it included all countries and
+    the downloaded CSV file contained data for all years available. As it was also in a wide format the use of Google Colab was required(<a href="https://colab.research.google.com/drive/1vCTV3oJmw8qRV1inrVK10Pb_akx9hH7V?usp=sharing" id="link">Colab 1</a> and <a href="https://colab.research.google.com/drive/1aNvNtvWMuR5dQO35hogT3tGRPu8jWIlQ?usp=sharing" id="link">Colab 2</a>). There were two problems with data cleaning. Firstly, the .query command didn't work as long as "Country Name" wasn't changed to "Country_Name". Secondly, the "Year" variable was interpreted as a string variable and thus needed to be destringed before .query was used. After the data was cleaned in Google Colab I used it for calculating average real interest rates, average expenses and changes in expenses in Microsoft Excel. Topojson used for Chart2 was posted on GitHub by user leakyMirror. Distances between the capital cities of the post-communist states and Paris were checked on https://www.distancecalculator.net/ website.
+</p>
+<div class="chart" id="Chart2"></div>
+<div class="chart" id="Chart3"></div>
+<div class="chart" id="Chart4"></div>
+
+<div class="chart" id="Chart6"></div>
+
+
+<p align="justify">
+    As I've stated in the introduction - the number of factors affecting economic success during and after the transition to the market economy
+    is uncountable thus charts created for this project definitely don't exhaust the topic. Nevertheless, some relationships are not negligible. Surprisingly, the regression of average economic growth on average real interest rates achieved an R2 of 0.3. Personally, I expected that 
+    contractionary monetary policy could define success during the transition, however, it would be logical that countries decided to maintain
+    their interest rates at a higher level because of problems with inflation thus high interest rates would suggest economic instability
+    at the beginning of the process. Nevertheless, even if my assumption about high interest rates being a result of high inflation is true,
+    it seems that tackling inflation through monetary measures was key to a successful transition and sustainable development in consecutive years.
+    Both average government expenses and change in expenses don't explain different growth rates between the countries according to charts 4 and 5.
+    It doesn't imply that fiscal policy was not an important factor in defining the economic performance of the transition economies though -
+    those variables are not the best in defining the style of fiscal policy e.g. fiscal deficit could be a better variable, however,
+    there is no reliable data available. Lastly, the best determinant out of the three presented is geographical location. It is definitely
+    unsurprising to me as it is probably a good proxy for the way in which transition was performed - countries like Poland or Czechia
+    were determined to build an economy similar to the western ones and accepted a lot of western guidance. On the other hand, Russia
+    because of its political and economic significance was tenacious to retain independence from western influence and performed privatisation
+    in a way which led to an emergence of crony capitalism and significant instability. Countries geographically and culturally closer to Russia
+    were more likely to accept Russian influence and thus their inefficient economic model.
+</p>
+
+<h3>References</h3>
+<p>https://data.un.org/Data.aspx?d=SNAAMA&f=grID%3A101%3BcurrID%3AUSD%3BpcFlag%3A1</p>
+<p>https://data.worldbank.org/indicator/FR.INR.RINR?locations=BY-BG-MD-RO-RU-CZ-UA</p>
+<p>https://data.worldbank.org/indicator/GC.XPN.TOTL.GD.ZS?locations=PL-CZ-UA-BY-RU-MD-RO-BG-SK</p>
+<p>https://www.distancecalculator.net/</p>
+
+</div>
+</body>
+
+
+
+<script>
+    var myChart1 = "PChart1.json";
+    var myChart2 = "PChart2.json";
+    var myChart3 = "PChart3.json";
+    var myChart4 = "PChart4.json";
+    var myChart5 = "PChart5.json";
+    var myChart6 = "PChart6.json";
+    var myChart7 = "Chart7.json";
+    var myChart8 = "Chart8.json";
+    var myChart9 = "Chart9.json";
+    var myChart10 = "Chart10.json";
+    var myChart11 = "Chart11.json";
+    var myChart12 = "Chart12.json";
+    var myChart13 = "Chart13.json";
+    var myChart14 = "Chart14.json";
+    var myChart15 = "Chart15.json";
+    var myChart16 = "Chart16.json";
+    var myChart17 = "Chart17.json";
+    var myChart18 = "Chart18.json";
+    var myChart19 = "Chart19.json";
+    var myChart20 = "Chart20.json";
+    var myChart21 = "Chart21.json";
+
+    vegaEmbed('#Chart1', myChart1);
+    vegaEmbed('#Chart2', myChart2);
+    vegaEmbed('#Chart3', myChart3);
+    vegaEmbed('#Chart4', myChart4);
+    vegaEmbed('#Chart5', myChart5);
+    vegaEmbed('#Chart6', myChart6);
+    vegaEmbed('#Chart7', myChart7);
+    vegaEmbed('#Chart8', myChart8);
+    vegaEmbed('#Chart9', myChart9);
+    vegaEmbed('#Chart10', myChart10);
+    vegaEmbed('#Chart11', myChart11);
+    vegaEmbed('#Chart12', myChart12);
+    vegaEmbed('#Chart13', myChart13);
+    vegaEmbed('#Chart14', myChart14);
+    vegaEmbed('#Chart15', myChart15);
+    vegaEmbed('#Chart16', myChart16);
+    vegaEmbed('#Chart17', myChart17);
+    vegaEmbed('#Chart18', myChart18);
+    vegaEmbed('#Chart19', myChart19);
+    vegaEmbed('#Chart20', myChart20);
+    vegaEmbed('#Chart21', myChart21);
+
+</script>
+</html>
